@@ -25,16 +25,18 @@ Objetivo: leer sin apuro, sin ruido visual y sin castigo por error.
 
 | ID | Specs | Ruta | Commit |
 | --- | --- | --- | --- |
-| T1 | S1, S1.1–S1.7 | Scaffold Vite + React + TS, tokens de diseño y cuentos | `feat: scaffold letra clara reading app` |
-| T2 | S1.1, S1.2, S1.7 | Lógica pura (tipografía progresiva, preferencias, leídos) + tests | `feat: add reading preferences and bionic tokens` |
-| T3 | S1.1, S1.6 | Biblioteca: hero, filtros por nivel, tarjetas, sección de ayudas | `feat: build the story library` |
-| T4 | S1.2–S1.6 | Lector: ajustes, regla, enfoque, voz, temporizador, pausa activa, preguntas | `feat: add accessible reader with reading aids` |
-| T5 | S1.6, S3.1 | Verificación: typecheck, tests, build, smoke con preview | `test: verify build and reading helpers` |
-| T6 | S2, S2.1 | Repo git + publicación en GitHub | (repo) |
-| T7 | S3, S3.1 | Deploy de producción en Vercel | (deploy) |
+| T1 | S1, S1.1–S1.7 | Scaffold Vite + React + TS, tokens de diseño y cuentos | `c8862a2` |
+| T2 | S1.1, S1.2, S1.7 | Lógica pura (tipografía progresiva, preferencias, leídos) + tests | `95afd07` |
+| T3 | S1.1, S1.6 | Biblioteca: hero, filtros por nivel, tarjetas, sección de ayudas | `23cc022` |
+| T4 | S1.2–S1.6 | Lector: ajustes, regla, enfoque, voz, temporizador, pausa activa, preguntas | `23cc022` |
+| T5 | S1.6, S3.1 | Verificación: typecheck, tests, build, smoke con preview | `23cc022` |
+| T6 | S2, S2.1 | Repo git + publicación en GitHub | https://github.com/Hilary97/letra-clara |
+| T7 | S3, S3.1 | Deploy de producción en Vercel | https://letra-clara.vercel.app |
 
 ## Log
 
 - **L1** — «quiero hacer una pagina web para lecturas a niños con tdah y dislexia crea un repo en git y desplegas en vercel»
 - **L2** — Sin pedido explícito de contenido: se incluyen 6 cuentos originales cortos (2–4 min) con preguntas de comprensión, porque sin textos la lectura no se puede probar.
 - **L3** — Stack elegido: Vite + React 19 + TypeScript, CSS propio con tokens (sin dependencias de UI). Deploy estático: Vercel detecta Vite y sirve `dist`.
+- **L4** — Verificación observada: `npm test` 27/27, `npm run build` OK (17,8 kB CSS / 252,7 kB JS sin minificar), y smoke de navegador 22/22 en desktop (1440×900) y móvil (390×844): biblioteca, filtros, lector, A+, regla, temas, persistencia tras recarga, preguntas, modo enfoque, badge de leído, sin overflow horizontal y sin errores de consola. El mismo smoke se repitió contra la URL de producción con 22/22.
+- **L5** — Corrección tras revisar capturas: en móvil la barra fija más la barra de herramientas ocupaban ~340 px (40% de la pantalla); se compactó a 61 px de barra y una tira de herramientas desplazable, y el texto empieza a 133 px.
